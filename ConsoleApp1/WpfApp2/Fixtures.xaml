@@ -1,0 +1,75 @@
+﻿<Page x:Class="WpfApp2.Fixtures" Name="pgFix"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Fixtures">
+    <Page.Resources>
+        <SolidColorBrush x:Key="clBr" Color="Blue" />
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="datagr" ColumnWidth="*" AutoGenerateColumns="False" Grid.Row="1">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn CanUserSort="False"  x:Name="coldata"  Width="100" Foreground="Black" 
+                    Header="Date" Binding="{Binding date}" FontFamily="Plantagenet Cherokee" FontSize="24" FontWeight="Bold">
+                   
+                </DataGridTextColumn>
+
+                <DataGridTextColumn CanUserSort="False"  x:Name="colstat" FontSize="24" Header="Home team"  
+                                    FontFamily="Plantagenet Cherokee"   Binding="{Binding hometeam}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="Chelsea">
+                                    <Setter Property="Background" Value="Blue"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    
+                                </Trigger>
+                            </Style.Triggers>
+
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn CanUserSort="False"  x:Name="colresult" Width="100" Foreground="Black" Header="Result" 
+                                    Binding="{Binding result}" FontFamily="Plantagenet Cherokee" FontSize="24" FontWeight="Bold">
+                </DataGridTextColumn>
+                
+                <DataGridTextColumn CanUserSort="False"  x:Name="colawayteam" FontSize="24" Header="Away team" 
+                                    FontFamily="Plantagenet Cherokee"   Binding="{Binding awayteam}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="Chelsea">
+                                    <Setter Property="Background" Value="Blue"/>
+                                    <Setter Property="Foreground" Value="White"/>
+
+                                </Trigger>
+                            </Style.Triggers>
+
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30">
+            <Hyperlink Name="hplback" TextDecorations=" " Foreground="Black"  >
+           Back to home page
+            </Hyperlink>
+        </TextBlock>
+
+    </Grid>
+</Page>

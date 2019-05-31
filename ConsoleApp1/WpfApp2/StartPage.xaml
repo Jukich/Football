@@ -1,0 +1,60 @@
+﻿<Page x:Class="WpfApp2.StartPage" Name="pg"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="800"
+      Title="StartPage"
+      >
+
+    <Grid x:Name="Start_page">
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Jukich\Desktop\cfcs.png" AlignmentY="Top" Stretch="UniformToFill" />
+        </Grid.Background>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" /> <ColumnDefinition Width="auto"/> <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions> 
+            <RowDefinition Height="Auto"/> <RowDefinition Height="auto"/> <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/> <RowDefinition Height="auto"/> <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock  Grid.Row="0"   VerticalAlignment="Bottom">
+        <Hyperlink TextDecorations="" Name="ViewPlayerHL" Foreground="White" FontSize="30" FontFamily="Comic Sans MS"
+                  >View players</Hyperlink>
+        </TextBlock>
+        
+        <TextBlock Grid.Row="1" VerticalAlignment="Bottom">
+        <Hyperlink TextDecorations="" Name="ViewRankingHL"  Foreground="White" FontSize="30" FontFamily="Comic Sans MS"
+                  >View curent ranking</Hyperlink>
+        </TextBlock>
+       
+        <TextBlock Name="txtadd"  Grid.Row="3" VerticalAlignment="Bottom">
+        <Hyperlink TextDecorations="" Name="AddPlayersHL"  Foreground="White" FontSize="30" FontFamily="Comic Sans MS"
+                  >Add players</Hyperlink>
+        </TextBlock>
+
+        <TextBlock Name="txtfix"  Grid.Row="2" VerticalAlignment="Bottom">
+        <Hyperlink TextDecorations="" Name="FixResHL"  Foreground="White" FontSize="30" FontFamily="Comic Sans MS"
+                  >Fixtures and results</Hyperlink>
+        </TextBlock>
+
+        <TextBlock Name="txtUsers"  Grid.Row="4" VerticalAlignment="Top" Margin="0,32,0,0">
+        <Hyperlink TextDecorations="" Name="hpUsers"  Foreground="White" FontSize="30" FontFamily="Comic Sans MS"
+                  >View all users</Hyperlink>
+        </TextBlock>
+        
+        <TextBlock Name="txtAct"  Grid.Row="5" VerticalAlignment="Top" >
+            <Hyperlink TextDecorations="" Name="hpAct"  Foreground="White" FontSize="30" FontFamily="Comic Sans MS"
+                  >View active users</Hyperlink>
+        </TextBlock>
+
+        <Button  Name="btnLogout" Content="Logout" Grid.Column="0"  FontSize="25" HorizontalAlignment="Left" 
+                 VerticalAlignment="Bottom" Grid.Row="6" Background="Transparent"  ></Button>
+
+    </Grid>
+</Page>

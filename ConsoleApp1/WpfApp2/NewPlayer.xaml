@@ -1,0 +1,87 @@
+﻿<Page x:Class="WpfApp2.NewPlayer" Name="pgNewP"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="NewPlayer">
+
+    <Grid  Name="gri">
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Jukich\Desktop\LOGO.JPG" Stretch="UniformToFill" Opacity="0.6"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition  Width="400"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Name="lblimg" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" 
+               FontSize="30" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="250" Margin="50,36,0,0" >
+            Image Path:
+        </Label>
+        <TextBox Name="txtimg" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top"
+                 FontSize="30" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="250" Margin="50,86,0,0" />
+        <Label Name="lblname" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top"
+               FontSize="30" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="250" Margin="50,137,0,0" Content="Name:"/>
+        <TextBox Name="txtName" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                 FontSize="30" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="250" Margin="50,187,0,0" />
+        <Label Name="lblsure" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" 
+               FontSize="30" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="250" Margin="50,233,0,0" Content="Surename:"/>
+        <TextBox Name="txtSure" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top"
+                 FontSize="30" FontFamily="Times New Roman" Height="45" Width="250" Margin="50,276,0,0"/>
+        
+        <Button Name="btnadd" Content="Add Player"  Width="200" Height="50" VerticalAlignment="Bottom"
+                Grid.Column="0" Grid.Row="6" Click="Btnadd_Click" Grid.RowSpan="2" />
+
+        <Grid Grid.Column="1" Name="gri2">
+            <Grid.RowDefinitions >
+                <RowDefinition/>  <RowDefinition/>  <RowDefinition/>    <RowDefinition/>
+                <RowDefinition/>    <RowDefinition/>    <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Name="lblday"  Content="Day of birth:" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="150"/>
+            <Label Name="lblmonth" Content="Month of birth:" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="150"/>
+
+            <Label Name="lblyear" Content="Year of birth:" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="150"/>
+            <Label Name="lblnat" Content="Nationality:"  Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="150" />
+            <Label Name="lblpos" Content="Position:" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="150"  />
+            <Label Name="lblnumb" Content="Team Number:" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="200"  />
+            <Label Name="lblgoal" Content="Career goals scored:" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="270"  />
+
+            <TextBox Name="txtday"  Background="Transparent"  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top"
+                     FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="100"/>
+            <TextBox Name="txtmonth"  Background="Transparent"  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"
+                     FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="100"/>
+            <TextBox Name="txtyear" Background="Transparent"   Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                     FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="100"/>
+            <ComboBox Name="cmbnat" Background="Transparent"  Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                     FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="150" Margin="0,0,95,0"
+                      ItemsSource="{Binding Nationalities}"/>
+            <ComboBox Name="cmbpos" Background="Transparent" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Top"
+                     FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="200" Margin="0,10,45,0"  
+                      ItemsSource="{Binding Positions}" />
+            <TextBox Name="txtnumb"  Background="Transparent" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                     FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="70" Margin="0,0,125,20"  />
+            <TextBox Name="txtgoal" Background="Transparent" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Top"
+                     FontSize="25" FontFamily="Times New Roman" Foreground="Black" Height="45" Width="70" Margin="0,0,50,0" 
+                     FontWeight="Bold"  />
+            
+
+            <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" >
+            <Hyperlink Name="hplback" Foreground="Black" TextDecorations="">
+                back to home page
+            </Hyperlink>
+            </TextBlock>
+
+        </Grid>
+
+    </Grid>
+</Page>
